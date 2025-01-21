@@ -1,0 +1,178 @@
+.max-height {
+  height: 90vh;
+}
+
+.parallax {
+  /* The image used */
+  background-image: radial-gradient(circle at center center, #641827, #da6597),
+    repeating-radial-gradient(
+      circle at center center,
+      #641827,
+      #641827,
+      32px,
+      transparent 64px,
+      transparent 32px
+    );
+  background-blend-mode: multiply;
+  background-color: #da6597;
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.svg {
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+}
+
+/* From Uiverse.io by adamgiebl */
+.cssbuttons-io {
+  position: relative;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, #ff3b30, #4a00e0);
+  color: ghostwhite;
+  overflow: hidden;
+}
+
+.cssbuttons-io span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.cssbuttons-io::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+  transform: scale(0.95);
+}
+
+body {
+  background-color: #121212;
+  color: white;
+}
+
+.popular {
+  color: #ff3b30;
+}
+
+.space {
+  margin-top: -10px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+#album-image {
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  height: 50vh;
+}
+
+.bg {
+    background: transparent;
+}
+
+.album {
+  transition: box-shadow 1s, transform 1s;
+  cursor: pointer;
+}
+.album:hover {
+  transform: scale(1.1);
+}
+
+.parrafo {
+  transition: 1s;
+  cursor: default;
+}
+
+.parrafo:hover {
+  transform: scale(1.1);
+}
+
+.titulo {
+  transition: 1s;
+  font-size: 1.7rem;
+}
+
+.titulo:hover {
+  transform: scale(1.1);
+  cursor: default;
+}
+
+.author {
+  transition: 1s;
+  cursor: default;
+}
+
+.author:hover {
+  transform: scale(1.1);
+}
+
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .albums {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Opcional: Alínea los elementos al inicio */
+  }
+}
+
+.albumss {
+  width: 100%;
+  height: auto;
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.albumss:hover {
+  transform: scale(1.1);
+}
+
+.back{
+  background-color: transparent !important;
+}

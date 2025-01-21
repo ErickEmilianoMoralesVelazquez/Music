@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid parallax max-height">
+        <div class="justify-content-center align-items-center d-flex flex-column max-height">
+            <img src="../assets/musicxc-logo.svg" alt="logo" class="img-fluid logo" style="width: 200px;">
+            <br>
+            <img src="../assets/Musicxc.svg" alt="logo-letter" class="img-fluid logo" style="width: 200px;">
+            <button class="cssbuttons-io mt-5" onclick="location.href='#popular-songs'">
+                <span><img src="/public/assets/itunes-note.svg" alt="">
+                </span>
+            </button>
+        </div>
+
+    </div>
+    <div class="container-fluid bg">
+        <div class="row p-5 ">
+            <div class="col-6 text-center rounded-4 album" id="album-image">
+                <!-- <img src="https://placehold.co/300x300" alt="" class="img-fluid rounded-4 album" id="album-image"> -->
+            </div>
+
+            <div class="col-6 ps-5">
+                <h1 class="display-5 author" id="album-author"></h1>
+                <h3 class="display-6 titulo" id="album-title">Album title</h3>
+                <p class="lead parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, culpa. Sit deserunt
+                    dolor perspiciatis earum autem ipsum consequatur in facilis quisquam officia nam minus sed doloribus
+                    natus suscipit, aliquam quae?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid ">
+        <div class="row justify-content-center align-items-center ps-5 d-flex">
+            <div class="col-6">
+                <h3 class="display-5 popular">Popular songs</h3>
+            </div>
+
+            <div class="col-6  text-dark text-end ">
+                <button type="button" class="btn btn-outline-danger me-5" data-bs-toggle="modal"
+                    data-bs-target="#addSongModal">
+                    Add song
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade text-start" id="addSongModal" tabindex="-1" aria-labelledby="addSongModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="addSongModalLabel">Agregar Canción</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addSongForm">
+                                    <div class="mb-3">
+                                        <label for="songTitle" class="form-label">Título de la Canción</label>
+                                        <input type="text" class="form-control" id="songTitle"
+                                            placeholder="Ingrese el título de la canción">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="songArtist" class="form-label">Autor</label>
+                                        <select class="form-select" id="songArtist">
+                                            <!-- Los autores se cargarán aquí con JavaScript -->
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="songAlbum" class="form-label">Álbum</label>
+                                        <select class="form-select" id="songAlbum">
+                                            <!-- Los álbumes se cargarán aquí con JavaScript -->
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="saveSongBtn">Guardar Canción</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para Actualizar Canción -->
+                <div class="modal fade text-start" id="updateSongModal" tabindex="-1"
+                    aria-labelledby="updateSongModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="updateSongModalLabel">Actualizar Canción</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="updateSongForm">
+                                    <div class="mb-3">
+                                        <label for="updateSongTitle" class="form-label">Título de la Canción</label>
+                                        <input type="text" class="form-control" id="updateSongTitle"
+                                            placeholder="Ingrese el nuevo título de la canción">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="updateSongArtist" class="form-label">Autor</label>
+                                        <select class="form-select" id="updateSongArtist">
+                                            <!-- Los autores se cargarán aquí con JavaScript -->
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="updateSongAlbum" class="form-label">Álbum</label>
+                                        <select class="form-select" id="updateSongAlbum">
+                                            <!-- Los álbumes se cargarán aquí con JavaScript -->
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="updateSongBtn">Actualizar
+                                    Canción</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Tabla de canciones-->
+    <div class="container-fluid p-5" id="popular-songs">
+        <table class="table table-hover table-dark back" id="">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Album</th>
+                    <th class="col">Author</th>
+                    <th class="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="songs-table-body" class="back">
+                <!-- Data will be fetched from the backend and inserted here -->
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="container-fluid d-flex align-items-center justify-content-center albums" id="album-container">
+        <!-- Los álbumes se cargarán aquí con JavaScript -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Incluyendo jQuery desde un CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
